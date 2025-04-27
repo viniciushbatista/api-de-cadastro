@@ -23,7 +23,7 @@ public class PersonService {
         return personRepository.findAll();
     }
 
-    public Optional<Person> listById(Long id){
+    public Optional<Person> foundById(Long id){
         return personRepository.findById(id);
     }
 
