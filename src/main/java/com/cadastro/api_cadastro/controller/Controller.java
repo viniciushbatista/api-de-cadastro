@@ -65,6 +65,7 @@ public class Controller {
         personService.foundById(id)
             .map(personBase -> {
                 modelMapper.map(person, personBase);
+                personService.savePerson(personBase);
                 return Void.TYPE;
             }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Person not found."));
     }
